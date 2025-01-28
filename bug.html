@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text will be replaced.
+  </div>
+
+  <script>
+    //Incorrect attempt to update the content of a div
+    document.getElementById("myDiv").textContent = "This is a replacement text!";
+
+    //Another div with some hidden text, this is a very common issue
+    var hiddenDiv = document.createElement("div");
+    hiddenDiv.id = "hiddenDiv";
+    hiddenDiv.style.display = "none";
+    hiddenDiv.textContent = "Hidden Text!";
+    document.body.appendChild(hiddenDiv);
+  </script>
+</body>
+</html>
